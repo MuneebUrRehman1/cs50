@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            function checkAnswer(event) {
+                const buttons = document.querySelectorAll('.choice');
+                const button = event.target;
+                const result = document.getElementById("#result");
+                buttons.forEach(btn => {
+                    btn.style.backgroundColor = "";
+                });
+                if (button.textContent === "3 People per 1 sheep") {
+                    result.innerHTML = "Correct!";
+                    button.style.backgroundColor = "green";
+
+                } else {
+                    result.innerHTML = "Incorrect!";
+                    button.style.backgroundColor = "red";
+                }
+            }
+
+            function confirmAnswer(event) {
+                const textfield = document.getElementById("textfield");
+                const result = document.getElementById("result2");
+                if (textfield.value.toLowerCase() === "pakistan") {
+                    result.innerHTML = "Correct!";
+                    textfield.style.backgroundColor = "green";
+
+                } else {
+                    result.innerHTML = "Incorrect!";
+                    textfield.style.backgroundColor = "red";
+                }
+
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the approximate ration of people to sheep in New Zealand?</h3>
+                <div id="result"></div>
+                <Button onclick="checkAnswer(event)" class="choice">6 People per 1 sheep</Button>
+                <Button onclick="checkAnswer(event)" class="choice">3 People per 1 sheep</Button>
+                <Button onclick="checkAnswer(event)" class="choice">1 Person per 1 sheep</Button>
+                <Button onclick="checkAnswer(event)" class="choice">1 Person per 3 sheep</Button>
+                <Button onclick="checkAnswer(event)" class="choice">1 Person per 6 sheep</Button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country is it illegal to own only one guinea pig, as a long guinea pig might get lonely?</h3>
+                <div id="result2"></div>
+                <input type="text" id="textfield" />
+                <Button onclick="confirmAnswer(event)">Check Answer</Button>
+            </div>
+        </div>
+    </body>
+
+</html>
