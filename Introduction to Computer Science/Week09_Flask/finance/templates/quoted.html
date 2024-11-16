@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+   <ul>
+    <li>
+        {{response.get("name")}}
+    </li>
+    <li>
+        {{response.get("price")}}
+    </li>
+    <li>
+        {{response.get("symbol")}}
+    </li>
+   </ul>
+{% endblock %}
