@@ -28,4 +28,5 @@ def condition_three(s):
 
 def condition_four(s):
     return s.isalnum()
-main()
+if __name__ == "__main__":
+    main()
