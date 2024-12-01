@@ -14,6 +14,9 @@ def convert(s):
         first_hours = to_24hour(int(time.group(1)), time.group(2), time.group(3))
         second_hours = to_24hour(int(time.group(4)), time.group(5), time.group(6))
         return f"{first_hours} to {second_hours}"
+    else:
+        raise ValueError
+        
         
 
 def to_24hour(hours, minutes, time):
